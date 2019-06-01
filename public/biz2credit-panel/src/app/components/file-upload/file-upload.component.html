@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="text-center"><b>*NOTE: </b>I have uploaded some user data from text file, if you want to upload new data make sure that text file should contain json data like test case text file.</div>
+<div class="well">
+    <div class="col-md-6 col-md-offset-3" style="margin: auto">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header text-center text-white" style="background-color: #343a40!important;">
+                <span class="fa fa-2x fa fa-file">File Upload User Data Text File</span>
+            </div>
+            <div class="card-body">
+              <form #e="ngForm" name="form" novalidate (ngSubmit)="e.form.valid && submit(e)">  
+                <label for="userfile"><b>Upload User Data</b></label>
+                <input type="file" accept=".txt" id="userfile" [(ngModel)]="userfile.flag" placeholder="Select User Data File" name="userfile" class="form-control"
+                 #userfile="ngModel"
+                 required
+                >
+                <div id="alert" [hidden]="true" class="alert alert-danger"></div>
+                <br>
+                <button type="submit" class="btn btn-sm btn-info" [disabled]="!e.form.valid">Submit</button>
+              </form>  
+            </div>
+        </div>
+    </div>
+<div>
+
+<!-- Modals-->
+<div id="popmessage" class="modal">
+                
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-body" id="messageModalBody">
+            <h4 class="card-header text-center text-white bg-dark"><b>Message</b></h4>
+            <div class="card-body">
+                <div id="message"></div>
+                <br>
+                <button (click)="updatelist()" class="btn btn-success btn-block">OK</button>
+            </div>       
+
+        </div>
+    </div>
+
+</div>
