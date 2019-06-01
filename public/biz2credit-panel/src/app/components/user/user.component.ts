@@ -12,8 +12,8 @@ export class UserComponent implements OnInit {
   users:any = [];
   text:String = '';
   cordinates = {
-    latitude:Number,
-    longitude:Number
+    latitude:'',
+    longitude:''
   }
   constructor(private dataService:DataService, private router:Router) {
     this.dataService.getAllUsers().subscribe(users=>{
